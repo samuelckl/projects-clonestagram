@@ -1,7 +1,11 @@
 import posts from "../data/posts"; 
 import Feed from "./Feed";
+import { useEffect } from "react";
 
 function FeedsList() {
+    useEffect(() => {
+        document.title = "Clonestagram";
+      }, []);
     // To map posts randomly 
     const postsData = posts.sort(() => .5 - Math.random());
     return (
