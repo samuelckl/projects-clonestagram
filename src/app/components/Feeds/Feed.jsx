@@ -34,7 +34,7 @@ function Feed({ post }) {
     };
 
     return (
-        <div className="flex flex-col w-full text-white p-4">
+        <div className="flex flex-col text-white p-4">
             <div className="flex items-center space-x-3">
                 <img src={user?.profile_pic} alt={user?.name} className="w-10 h-10 rounded-full" />
                 <Link to={`/profile/${user?.id}`} className="font-bold hover:text-blue-500">

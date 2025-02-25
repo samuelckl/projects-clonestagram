@@ -10,7 +10,7 @@ function FeedsList() {
     const postsData = posts.sort(() => .5 - Math.random());
     return (
         // Simply wrapped in grid and mapped all posts
-        <div className="grid grid-cols-1 md:grid-cols-2 w-full h-full bg-black-900">
+        <div className="grid grid-cols-1 md:grid-cols-2 md:w-200 h-full bg-black-900">
             {postsData.map((post) => (
                 <Feed key={post.id} post={post} />
             ))}
