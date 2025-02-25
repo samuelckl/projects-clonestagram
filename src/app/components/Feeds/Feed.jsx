@@ -20,7 +20,7 @@ function Feed({ post }) {
     useEffect(() => { // Allow user to change the likes and saved to localStorage
         localStorage.setItem(`likes-${post.id}`, JSON.stringify(likes));
         localStorage.setItem(`saved-${post.id}`, JSON.stringify(savedBy));
-    }, [likes, savedBy, post.id]); 
+    }, [likes, savedBy, post.id]);
 
     const isLiked = likes.includes(currentUser.id); // Check if isLiked by user samuelckl
     const isSaved = savedBy.includes(currentUser.id);
@@ -41,7 +41,12 @@ function Feed({ post }) {
                     {user?.name}
                 </Link>
                 <p className="text-sm text-gray-500">{dayCount} days ago</p>
-                <button className="px-3 py-1 border rounded-lg text-blue-500">Follow</button>
+                <button className="relative group cursor-pointer px-3 py-1 border rounded-lg text-blue-500 hover:text-red-500">
+                    Follow
+                    {/* Added tooltip for this  */}
+                    <span className="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 hidden group-hover:block bg-gray-800 text-white text-xs rounded-full px-2 py-1 whitespace-nowrap">
+                    This is not yet implemented
+                </span></button>
                 <button className="ml-auto px-2">⋯</button>
             </div>
 
